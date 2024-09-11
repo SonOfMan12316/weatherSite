@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;200;300;400;500;600;700800;900&display=swap');
+
+:root {
+    /* default accent colors */
+    --img0: #3794ff;
+    --img1: #ff7a89;
+    --img2: #00d39b;
+    --img3: #fca4a9;
+    --img4: #ffb300;
+    --img5: #4ceff4;
+
+    /* weather accent colors */
+    --d-clear: #75c3ff;
+    --d-clouds: #9fbfff;
+    --d-rain: #b4effe;
+    --d-snow: #c8e4fe;
+
+    --drizzle: #2afe86;
+    --dust: #ffc494;
+    --fog: #a4bedf;
+    --haze: #d0d796;
+    --mist: #8ce1cc;
+    --smoke: var(--haze);
+    --squll: #efc589;
+    --thunderstorm: var(--squll);
+    --tornado: var(--squll);
+
+    --n-clear: #fd76c9;
+    --n-clouds: #85e3ff;
+    --n-rain: #429eff;
+    --n-snow: var(--d-snow);
+
+    /* main variable */
+    --accent: #ec6e4c;
+    --color: var(--accent);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat, sans-serif';
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(24, 24, 24) !important;
+    height: 100vh;
+    /* overflow-y: hidden; */
+    color: white;
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
