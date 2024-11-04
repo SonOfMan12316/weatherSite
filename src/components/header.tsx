@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <div className="header flex justify-between">
+    <div className="header">
       <div className="flex items-center justify-center">
         {title === "Weather Site" ? (
         <Settings
@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({
       )}
       </div>
       <div>
-        <p className="font-medium md:font-bold text-xl md:text-2xl text-center">{title}</p>
+        <p className="header-title">{title}</p>
       </div>
       <div className="flex items-center justify-center">
         {title === "Weather Site" ? (
