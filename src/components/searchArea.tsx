@@ -44,8 +44,7 @@ const SearchArea: React.FC<SearchAreaProp> = ({ onSearch, isLoading }) => {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="search-area">
+    <div className="search-area">
       <p className="text">City</p>
       <div className="input-container">
         <input
@@ -80,7 +79,6 @@ const SearchArea: React.FC<SearchAreaProp> = ({ onSearch, isLoading }) => {
           <span>Dynamic Backgrounds</span>
         </p>
       </div>
-    </div>
     </div>
   );
 };

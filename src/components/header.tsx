@@ -34,43 +34,39 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <div className="header">
-      <div className="flex items-center justify-center">
-        {title === "Weather Site" ? (
+      {title === "Weather Site" ? (
         <Settings
           titleAccess="Settings"
           className="left-icon icon"
           onClick={onToggleSetting}
         />
       ) : (
-        <Arrowback
-          titleAccess="Go Back"
-          className="left-icon icon"
-          onClick={onBack}
-        />
+        <Arrowback className="left-icon icon" onClick={onBack} />
       )}
-      </div>
       <div>
         <p className="header-title">{title}</p>
       </div>
-      <div className="flex items-center justify-center">
-        {title === "Weather Site" ? (
+      {title === "Weather Site" ? (
         <Folder
           titleAccess="Favourite Cities"
           className="right-icon icon"
           onClick={onToggleFav}
         />
       ) : favourites.some((name) => name === title) ? (
-        <Star 
-          titleAccess='Remove from favourites' 
+        <Star
+          titleAccess="Remove from favourites"
           className="right-icon active icon"
-          filled={false} onClick={removeFavourite} />
+          filled={false}
+          onClick={removeFavourite}
+        />
       ) : (
         <Star
           titleAccess="Add to favourite"
           className="right-icon icon"
-          filled={true} onClick={addFavourite} />
+          filled={true}
+          onClick={addFavourite}
+        />
       )}
-      </div>
     </div>
   );
 };
