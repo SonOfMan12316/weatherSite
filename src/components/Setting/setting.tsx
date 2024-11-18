@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/setting.css';
-import useOutsideClick from "../hooks/useOutsideClick";
+import useOutsideClick from "../../hooks/useOutsideClick";
 import DefaultBgSelection from './defaultBgSelect';
 import DynamicBgSelection from "./dynamicBgSelection";
 import TempUnitSelection from "./temp-unit";

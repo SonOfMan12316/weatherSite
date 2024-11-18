@@ -1,6 +1,6 @@
 import React from "react";
 
-import useOutsideClick from "./hooks/useOutsideClick";
+import useOutsideClick from "../hooks/useOutsideClick";
 import { Close } from "./icons";
 import "./styles/favArea.css";
 
