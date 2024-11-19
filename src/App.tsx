@@ -8,6 +8,11 @@ import Footer from "./components/footer";
 import "./index.css";
 import { changeDefaultBg, changeDynamicBg } from "./components/changeBg";
 
+interface PopupState {
+  favArea: boolean;
+  settingArea: boolean;
+}
+
 changeDefaultBg();
 const API_URL = import.meta.env.VITE_API_URL;
 const API_KEY = import.meta.env.VITE_APP_KEY;
@@ -26,8 +31,7 @@ const App: React.FC = () => {
     defaultBg: localStorage.getItem("defaultBg") || "ON",
     temp_unit: (localStorage.getItem("temp_unit") as "c" | "f") || "c",
   });
-
-  const [popup, setPopup] = useState({
+  const [popup, setPopup] = useState<PopupState>({
     favArea: false,
     settingArea: false,
   });
