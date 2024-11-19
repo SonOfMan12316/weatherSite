@@ -131,7 +131,7 @@ const App: React.FC = () => {
         <Setting onClose={closeArea} onChange={changeSettings} />
       )}
       <Header
-        title={data ? data.headerTitle : "Weather Site"}
+        title={data ? data.headerTitle : "Weather Watch"}
         onBack={gotoSearchArea}
         onToggleFav={toggleFavArea}
         onToggleSetting={toggleSettingArea}
