@@ -7,6 +7,7 @@ import WeatherInfo from "./components/weather";
 import Footer from "./components/footer";
 import "./index.css";
 import { changeDefaultBg, changeDynamicBg } from "./components/changeBg";
+import { toast, Toaster } from "react-hot-toast";
 
 interface PopupState {
   favArea: boolean;
@@ -56,9 +57,9 @@ const App: React.FC = () => {
       query = `?lat=${lat}&lon=${long}&appid=${API_KEY}&units=${tempUnit}`;
     } else {
       setIsLoading(false);
-      let __confirm = confirm(
-        "Location permission is not granted. Would you want to give permission?"
-      );
+      let __confirm = toast.error("Location access has not been granted", {
+        position: "top-center",
+      });
       if (__confirm) fetchLocation();
       return;
     }
@@ -69,8 +70,9 @@ const App: React.FC = () => {
     ]).then((res) => {
       setIsLoading(false);
       if (res[0].cod !== 200) {
-        document.documentElement.style.setProperty("--color", `RED`);
-        alert("Searched City Name Does Not Exist");
+        toast.error("The searched city name does not exist", {
+          position: "top-right",
+        });
         return;
       }
 
@@ -124,6 +126,30 @@ const App: React.FC = () => {
 
   return (
     <>
+      <div className="absolute right-0">
+        <Toaster
+          position="top-left"
+          reverseOrder={false}
+          toastOptions={{
+            error: {
+              style: {
+                background: "#ffcccc",
+                color: "#fe0808",
+                fontSize: "0.7rem",
+                cursor: "pointer",
+              },
+            },
+            success: {
+              style: {
+                background: "#d8ffc5",
+                color: "#1e5b00",
+                fontSize: "0.7rem",
+                cursor: "pointer",
+              },
+            },
+          }}
+        />
+      </div>
       {popup.favArea && !data && (
         <FavArea onSearch={search} onClose={closeArea} />
       )}
