@@ -1,14 +1,14 @@
 .search-area {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   width: 700px;
   margin: 120px 0px;
 }
 
 .search-area .text {
-  text-align: center;
+  text-align: start;
   margin: 0px 5px;
   margin-bottom: 10px;
   font-size: 1.1rem;
@@ -28,8 +28,9 @@
   border: none;
   border-radius: 5px;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 0.75rem;
   margin: 10px 10px;
+  color: grey;
 }
 
 .search-area input:focus {
@@ -136,7 +137,7 @@
     } */
 
   .search-area .text {
-    font-size: 1rem;
+    font-size: 0.75rem;
   }
 
   .search-area input {

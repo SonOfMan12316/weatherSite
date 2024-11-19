@@ -9,7 +9,6 @@ interface SearchAreaProp {
 
 const SearchArea: React.FC<SearchAreaProp> = ({ onSearch, isLoading }) => {
   const [cityName, setCityName] = useState("");
-  const [message, setMessage] = useState("");
 
   const LoadingSpinner = () => {
     return (
@@ -19,16 +18,6 @@ const SearchArea: React.FC<SearchAreaProp> = ({ onSearch, isLoading }) => {
     );
   };
 
-  const showError = (msg: string) => {
-    setMessage(msg);
-    document.documentElement.style.setProperty("--color", `RED`);
-  };
-
-  const removeError = () => {
-    setMessage("");
-    document.documentElement.style.setProperty("--color", `var(--accent)`);
-  };
-
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       searchCity();
@@ -36,16 +25,10 @@ const SearchArea: React.FC<SearchAreaProp> = ({ onSearch, isLoading }) => {
   };
 
   const searchCity = () => {
-    if (cityName.trim() === "") {
-      showError("City name is required");
-      return;
-    }
-    removeError();
     onSearch(cityName.trim());
   };
 
   const searchLocation = () => {
-    removeError();
     onSearch("");
   };
 
@@ -61,7 +44,6 @@ const SearchArea: React.FC<SearchAreaProp> = ({ onSearch, isLoading }) => {
           onKeyDown={handleKeyDown}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setCityName(e.target.value);
-            removeError();
           }}
         />
         <Location
@@ -71,11 +53,18 @@ const SearchArea: React.FC<SearchAreaProp> = ({ onSearch, isLoading }) => {
           onClick={searchLocation}
         />
       </div>
-      <p className="message-text">{message}</p>
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <button type="button" onClick={searchCity}>
+        <button
+          type="button"
+          onClick={searchCity}
+          disabled={!cityName}
+          style={{
+            opacity: !cityName ? 0.5 : 1,
+            cursor: !cityName ? "not-allowed" : "pointer",
+          }}
+        >
           Search
         </button>
       )}
