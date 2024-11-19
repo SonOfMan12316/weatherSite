@@ -40,216 +40,210 @@
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: rgb(24, 24, 24) !important;
-    height: 100vh;
-    /* overflow-y: hidden; */
-    color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(24, 24, 24) !important;
+  height: 100vh;
+  /* overflow-y: hidden; */
+  color: white;
 
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .app {
-    width: 1000px;
-    min-height: fit-content;
-    max-height: 90%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    transition: 0.5s;
+  width: 1000px;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  transition: 0.5s;
 }
 
 .popup-area {
-    color: white;
-    position: absolute;
-    z-index: 100;
-    top: 10px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 80%;
-    max-height: 80%;
-    margin: auto;
-    border-radius: 10px;
-    border: 1px solid white;
-    background-color: rgba(0, 0, 0, 0.9);
-    box-shadow: 0px 0px 5px 0px var(--color);
+  color: white;
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  max-height: 80%;
+  margin: auto;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 5px 0px var(--color);
 }
 
 .popup-area .title {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid var(--color);
-    font-size: 1.2rem;
-    margin: 10px 0px;
-    padding-bottom: 5px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--color);
+  font-size: 1.2rem;
+  margin: 10px 0px;
+  padding-bottom: 5px;
 }
 
 .popup-area .icon {
-    position: absolute;
-    top: 7px;
-    right: 7px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
 }
 
 @media only screen and (max-width: 1100px) {
-    .app {
-        width: 90%;
-    }
+  .app {
+    width: 90%;
+    max-height: 80vh;
+  }
 }
 
 /* Background-blur effect */
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    .app {
-        -webkit-backdrop-filter: blur(7px);
-        backdrop-filter: blur(7px);
-    }
+  .app {
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+  }
 
-    .popup-area {
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
-    }
+  .popup-area {
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
 }
 
 .icon {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .icon:hover {
-    filter: drop-shadow(0px 0px 5px var(--color));
+  filter: drop-shadow(0px 0px 5px var(--color));
 }
 
 .icon:active {
-    filter: drop-shadow(0px 0px 1px white);
+  filter: drop-shadow(0px 0px 1px white);
 }
 
 .active {
-    color: var(--color);
-    filter: drop-shadow(0px 0px 1px var(--color));
+  color: var(--color);
+  filter: drop-shadow(0px 0px 1px var(--color));
 }
 
 /* === Header CSS === */
 .header {
   position: fixed;
-    top: 0;
-    width: 100%;
-    margin: 5px;
-    padding: 5px;
-    border-bottom: 1px solid var(--color);
+  top: 0;
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+  border-bottom: 1px solid var(--color);
 }
 
 .left-icon {
   position: absolute;
   left: 15px;
-  top: 8px;
+  top: 12px;
 }
 
 .right-icon {
   position: absolute;
   right: 15px;
-  top: 8px;
+  top: 15px;
 }
 
 .header-title {
-    color: var(--color);
-    text-align: center;
+  color: var(--color);
+  text-align: center;
   font-size: 1.7rem;
   font-weight: 700;
 }
 
 /* === Footer CSS === */
 .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    margin: 5px;
-    padding: 5px;
-    text-align: center;
-    border-top: 1px solid var(--color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  border-top: 1px solid var(--color);
 }
 
 .footer .accent-text {
-    color: var(--color);
-    text-decoration: underline;
-    text-decoration-color: var(--color);
+  color: var(--color);
+  text-decoration: underline;
+  text-decoration-color: var(--color);
 }
 
 .footer .accent-text:hover {
-    text-decoration-color: #fff;
-    text-underline-offset: 3px;
+  text-decoration-color: #fff;
+  text-underline-offset: 3px;
 }
 
 @media only screen and (max-width: 520px) {
-    .app {
-        max-height: 80%;
-        margin-top: -30px;
-    }
+  .popup-area {
+    max-height: 82%;
+    width: 92%;
+  }
 
-    .popup-area {
-        max-height: 82%;
-        width: 92%;
-    }
+  .left-icon {
+    left: 10px;
+    top: 5px;
+  }
 
-    .left-icon {
-        left: 10px;
-        top: 5px;
-    }
+  .right-icon {
+    right: 10px;
+  }
 
-    .right-icon {
-        right: 10px;
-        top: 5px;
-    }
+  .header {
+    margin: 4px;
+  }
 
-    .header {
-        margin: 4px;
-    }
+  .header-title {
+    font-weight: 500;
+    font-size: 1.3rem;
+  }
 
-    .header-title {
-        font-weight: 500;
-        font-size: 1.3rem;
-    }
+  .footer {
+    margin: 4px;
+  }
 
-    .footer {
-        margin: 4px;
-    }
-
-    .footer-title {
-        font-weight: 400;
-        font-size: 1rem;
-    }
+  .footer-title {
+    font-weight: 400;
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 300px) {
-    * {
-        font-size: 0.8rem;
-    }
+  * {
+    font-size: 0.8rem;
+  }
 }
 
 /* Scrollbar styles */
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 3px;
+  width: 5px;
+  height: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--color);
+  background: var(--color);
 }
 
 ::-webkit-scrollbar-thumb:active {
-    background: var(--color);
+  background: var(--color);
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 10px;
+  border-radius: 10px;
 }

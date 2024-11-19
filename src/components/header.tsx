@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Arrowback, Folder, Settings, Star } from "./icons";
+import { Arrowback, Folder, Settings, Star, StarOutline } from "./icons";
 
 interface HeaderProps {
   title: string;
@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({
   const addFavourite = () => {
     const newFavourites = [...favourites, title];
     setFavourites(newFavourites);
-    ls.setItem("favorites", JSON.stringify(newFavourites));
+    ls.setItem("favourites", JSON.stringify(newFavourites));
   };
 
   const removeFavourite = () => {
@@ -53,17 +53,15 @@ const Header: React.FC<HeaderProps> = ({
           onClick={onToggleFav}
         />
       ) : favourites.some((name) => name === title) ? (
-        <Star
+        <StarOutline
           titleAccess="Remove from favourites"
           className="right-icon active icon"
-          filled={false}
           onClick={removeFavourite}
         />
       ) : (
         <Star
-          titleAccess="Add to favourite"
+          titleAccess="Add to favourites"
           className="right-icon icon"
-          filled={true}
           onClick={addFavourite}
         />
       )}
