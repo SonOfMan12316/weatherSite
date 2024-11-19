@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <div className="header">
-      {title === "Weather Site" ? (
+      {title === "Weather Watch" ? (
         <Settings
           titleAccess="Settings"
           className="left-icon icon"
@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({
       <div>
         <p className="header-title">{title}</p>
       </div>
-      {title === "Weather Site" ? (
+      {title === "Weather Watch" ? (
         <Folder
           titleAccess="Favourite Cities"
           className="right-icon icon"
