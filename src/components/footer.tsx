@@ -3,7 +3,13 @@ const Footer = () => {
   return (
     <div className="footer">
       <p className="footer-title">
-        <span>© mancyDev </span>
+        <a
+          className="text-white"
+          href="https://github.com/SonOfMan12316/weatherSite"
+          target="_blank"
+        >
+          © mancyDev{" "}
+        </a>
         <span>{currentYear}</span>
       </p>
     </div>

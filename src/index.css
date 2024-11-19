@@ -97,6 +97,11 @@ body {
   right: 7px;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 1100px) {
   .app {
     width: 90%;
