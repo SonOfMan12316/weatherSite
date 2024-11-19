@@ -81,35 +81,33 @@ const WeatherInfo: React.FC<WeatherProps> = ({
             <h1>{currentWeather.main.temp}</h1>
             {tempUnit === "c" ? <span> &#8451; </span> : <span> &#8457; </span>}
           </div>
-          <hr className="vline" />
-          <div className="more-details center">
-            <div className="detail">
-              Humidity
-              <p className="value">{currentWeather.main.humidity + " %"}</p>
+        </div>
+        <hr className="vline" />
+        <div className="more-details center">
+          <div className="detail">
+            Humidity
+            <p className="value">{currentWeather.main.humidity + " %"}</p>
+          </div>
+          <div className="detail">
+            Wind Speed
+            <p className="value">{currentWeather.wind.speed + " /m/s"}</p>
+          </div>
+          <div className="detail">
+            Pressure
+            <p className="value">{currentWeather.main.pressure + " hPa"}</p>
+          </div>
+          <div className="detail">
+            Visibility
+            <p className="value">{currentWeather.visibility / 1000 + " km"}</p>
+          </div>
+          <div className="sunrise-sunset">
+            <div className="sunrise-box">
+              <p>{sunriseTime}</p>
+              <img src="/WeatherWatch/img/icons/sunrise.png" alt="sunrise" />
             </div>
-            <div className="detail">
-              Wind Speed
-              <p className="value">{currentWeather.wind.speed + " /m/s"}</p>
-            </div>
-            <div className="detail">
-              Pressure
-              <p className="value">{currentWeather.main.pressure + " hPa"}</p>
-            </div>
-            <div className="detail">
-              Visibility
-              <p className="value">
-                {currentWeather.visibility / 1000 + " km"}
-              </p>
-            </div>
-            <div className="sunrise-sunset">
-              <div className="sunrise-box">
-                <p>{sunriseTime}</p>
-                <img src="/WeatherWatch/img/icons/sunrise.png" alt="sunrise" />
-              </div>
-              <div className="sunset-box">
-                <img src="/WeatherWatch/img/icons/sunset.png" alt="sunset" />
-                <p>{sunsetTime}</p>
-              </div>
+            <div className="sunset-box">
+              <img src="/WeatherWatch/img/icons/sunset.png" alt="sunset" />
+              <p>{sunsetTime}</p>
             </div>
           </div>
         </div>
