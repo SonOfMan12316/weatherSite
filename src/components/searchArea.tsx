@@ -29,6 +29,12 @@ const SearchArea: React.FC<SearchAreaProp> = ({ onSearch, isLoading }) => {
     document.documentElement.style.setProperty("--color", `var(--accent)`);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      searchCity();
+    }
+  };
+
   const searchCity = () => {
     if (cityName.trim() === "") {
       showError("City name is required");
@@ -51,7 +57,8 @@ const SearchArea: React.FC<SearchAreaProp> = ({ onSearch, isLoading }) => {
           type="text"
           name="cityName"
           value={cityName}
-          placeholder="Ex: Lekki, Ng"
+          placeholder="Casablanca"
+          onKeyDown={handleKeyDown}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setCityName(e.target.value);
             removeError();
