@@ -39,7 +39,7 @@ const HourlyWeather: React.FC<HourlyWeatherProps> = ({
     <div className="hourly-weather-item">
       <p className="time">{time}</p>
       <img
-        src={`http://openweathermap.org/img/wn/${hourlyForecast.weather[0].icon}@2x.png`}
+        src={`https://openweathermap.org/img/wn/${hourlyForecast.weather[0].icon}@2x.png`}
         alt="Weather Icon"
       />
       <p className="description">{hourlyForecast.weather[0].description}</p>

@@ -72,7 +72,7 @@ const WeatherInfo: React.FC<WeatherProps> = ({
           <div className="description-box center">
             <img
               className="weather-icon"
-              src={`http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`}
+              src={`https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`}
               alt="Weather Icon"
             />
             <p>{currentWeather.weather[0].description}</p>
