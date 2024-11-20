@@ -19,7 +19,7 @@ const changeDefaultBg = () => {
     defaultBg = Math.floor(Math.random() * 6).toString();
     localStorage.setItem("defaultBg", defaultBg);
   }
-  const imagePath = `/WeatherWatch/img/default/img${defaultBg}.jpg`;
+  const imagePath = `/img/default/img${defaultBg}.jpg`;
   const color = `img${defaultBg}`;
 
   changeBg(imagePath, color);
@@ -39,12 +39,12 @@ const changeDynamicBg = (data: WeatherData) => {
     dynamicBg === "rain" ||
     dynamicBg === "snow"
   ) {
-    imagePath = `/WeatherWatch/img/weather/${day_night}-${dynamicBg}.jpg`;
+    imagePath = `/img/weather/${day_night}-${dynamicBg}.jpg`;
     color = `${day_night}-${dynamicBg}`;
   } else {
     if (dynamicBg == "sand" || dynamicBg == "ash") dynamicBg = "dust";
 
-    imagePath = `/WeatherWatch/img/weather/${dynamicBg}.jpg`;
+    imagePath = `/img/weather/${dynamicBg}.jpg`;
     color = `${dynamicBg}`;
   }
   changeBg(imagePath, color);

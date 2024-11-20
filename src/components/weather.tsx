@@ -103,10 +103,10 @@ const WeatherInfo: React.FC<WeatherProps> = ({
           <div className="sunrise-sunset">
             <div className="sunrise-box">
               <p>{sunriseTime}</p>
-              <img src="/WeatherWatch/img/icons/sunrise.png" alt="sunrise" />
+              <img src="/img/icons/sunrise.png" alt="sunrise" />
             </div>
             <div className="sunset-box">
-              <img src="/WeatherWatch/img/icons/sunset.png" alt="sunset" />
+              <img src="/img/icons/sunset.png" alt="sunset" />
               <p>{sunsetTime}</p>
             </div>
           </div>

@@ -16,7 +16,7 @@ const DefaultBgSelection: React.FC<BgSelectProp> = ({ onChange }) => {
   };
 
   const ThumbnailImage = ({ num }: { num: number }) => {
-    const source = `/WeatherWatch/img/default/thumbnail${num}.jpg`;
+    const source = `/img/default/thumbnail${num}.jpg`;
     return (
       <div className="thumbnail-container">
         <label htmlFor={`thumbnail${num}`}>
