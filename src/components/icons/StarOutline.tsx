@@ -2,7 +2,7 @@ import React from "react";
 
 interface StarProp extends React.SVGProps<SVGSVGElement> {
   filled?: boolean;
-  titleAccess: string;
+  titleAccess?: string;
 }
 
 const StarOutline: React.FC<StarProp> = ({ filled, titleAccess, ...props }) => {
